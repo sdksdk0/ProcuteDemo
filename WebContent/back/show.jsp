@@ -28,7 +28,7 @@
 <body>
 
 	<a href="add.jsp"  >添加</a>
-	<form method="post"  >
+	<form >
 		<table  border="1px" align="center"  cellspacing="0px" cellspadding="0px"  id="mytable">
 		 <thead>
 		<tr>
@@ -57,9 +57,9 @@
 						<td class="utd"><%=map.get("PNAME") %></td>
 						<td class="utd"><%=map.get("PRICE") %></td>
 						<td class="utd"><%=map.get("STORES") %></td>
-					<!-- 	<td><a id="update" href="update.jsp?pid=<%=map.get("PID")%>&pname=<%=map.get("PNAME")%>&price=<%=map.get("PRICE")%>&stores=<%=map.get("STORES")%> ">[修改]</a> &nbsp;<a  href="del.jsp?pid=<%=map.get("PID")%>">[删除]</a></td>
-					 -->
-						<td><a id="update"  >[修改]</a> &nbsp;<a  href="del.jsp?pid=<%=map.get("PID")%>">[删除]</a></td>
+					 	<td><a id="update" href="update.jsp?pid=<%=map.get("PID")%>&pname=<%=map.get("PNAME")%>&price=<%=map.get("PRICE")%>&stores=<%=map.get("STORES")%> ">[修改]</a> &nbsp;<a  href="del.jsp?pid=<%=map.get("PID")%>">[删除]</a></td>
+					 
+						<%-- <td><a id="update"  >[修改]</a> &nbsp;<a  href="del.jsp?pid=<%=map.get("PID")%>">[删除]</a></td>	 --%>							
 	</tr>
 	<% 				
 			}
@@ -83,9 +83,7 @@
 	//绑定鼠标移入移出事件，改变背景颜色
 	function showInfo(){
 		
-		$("tbody tr").css("background","#fff");
 		
-		$("tbody tr:even").css("background","#39f");
 		
 		$("tbody  tr").unbind();
 		$("tbody  tr").bind({
@@ -94,12 +92,7 @@
 				$(this).css("background",	"#6ff");
 			},
 			mouseout:function(){	
-			//判断触发的事件是奇数行还是偶数行
-			if($(this).index()%2==0){
-				$(this).css("background",	"#39f");
-			}else{
-				$(this).css("background","#fff");	
-			}
+				$(this).css("background",	"#fff");
 			}
 		});
 		
@@ -146,8 +139,8 @@
 	
 	$("#update").click(function(){
 	
-		
-		alert("update.jsp?pid="+$('td:eq(0)').text()+"&pname="+$('td:eq(1)').text()+"&price="+$('td:eq(2)').text()+"&stores="+$('td:eq(3)').text());
+	
+	//	mytd.innerHTML='<a href="javascript:deleteObj(\''+myid+'\')" class="blue">删除</a>';
 		
 	});
 	

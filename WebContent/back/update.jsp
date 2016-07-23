@@ -16,8 +16,8 @@
 		request.setCharacterEncoding("UTF-8");
 	
 		String pid=request.getParameter("pid");
-		//String pname=new String(request.getParameter("pname").getBytes("ISO-8859-1"));
-		String pname=request.getParameter("pname");
+		String pname=new String(request.getParameter("pname").getBytes("ISO-8859-1"));
+		//String pname=request.getParameter("pname");
 		String price=request.getParameter("price");
 		String stores=request.getParameter("stores");
 
